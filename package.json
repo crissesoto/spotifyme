@@ -1,0 +1,20 @@
+{
+  "name": "spotifyme",
+  "version": "1.0.0",
+  "description": "A full stack web app to visualize personalized Spotify data with the help of Node.js, React, Styled Components, and the Spotify Web API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Crisse Soto",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crissesoto/spotifyme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crissesoto/spotifyme/issues"
+  },
+  "homepage": "https://github.com/crissesoto/spotifyme#readme"
+}
