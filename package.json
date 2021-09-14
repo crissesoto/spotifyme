@@ -4,8 +4,10 @@
   "description": "A full stack web app to visualize personalized Spotify data with the help of Node.js, React, Styled Components, and the Spotify Web API.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js",
+    "client": "cd client && npm start",
+    "postinstall": "cd client && npm install"
   },
   "keywords": [],
   "author": "Crisse Soto",
@@ -24,6 +26,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
     "nodemon": "^2.0.12"
   }
 }
