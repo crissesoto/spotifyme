@@ -1,37 +1,46 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { accessToken, logout, getCurrentUserProfile } from './spofify';
+
 function App() {
+  const [token, setToken] = useState(null);
+  const [currentProfile, setCurrentProfile] = useState(null);
 
   useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const accessToken = urlParams.get('access_token');
-    const refreshToken = urlParams.get('refresh_token');
+    setToken(accessToken);
 
-
-    if (refreshToken) {
-      fetch(`/refresh_token?refresh_token=${refreshToken}`)
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err));
-    }
-  }, []);
+    const fetchData = async () => {
+      try {
+        const { data } = await getCurrentUserProfile();
+        setCurrentProfile(data);
+      } catch(e) {
+        console.error(e);
+      }
+    };
+    
+  },[]);
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
+        {
+          !token ? (
+            <a
           className="App-link"
           href="http://localhost:8000/login"
         >
-          Open shopify
+          log into shopify
         </a>
+          ) : (
+            <>
+              <h1>Logged in</h1>
+              <button onClick={logout}>Log out</button>
+            </>
+            
+          )
+        }
       </header>
     </div>
   );
