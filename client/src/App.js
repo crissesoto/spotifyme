@@ -6,10 +6,22 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
-import styled, { createGlobalStyle } from 'styled-components/macro';
 
 import { accessToken, logout, getCurrentUserProfile } from './spofify';
 import {catchErrors} from './utils';
+
+import styled from 'styled-components/macro';
+import { GlobalStyle } from './styles';
+
+const StyledLoginButton = styled.a`
+  background-color: var(--green);
+  color: var(--white);
+  padding: 10px 20px;
+  margin: 20px;
+  border-radius: 30px;
+  display: inline-block;
+`;
+
 
 // Scroll to top of page when changing routes
 // https://reactrouter.com/web/guides/scroll-restoration/scroll-to-top
@@ -42,15 +54,16 @@ function App() {
 
   return (
     <div className="App">
+      <GlobalStyle />
+
       <header className="App-header">
         {
           !token ? (
-            <a
-          className="App-link"
+            <StyledLoginButton
           href="http://localhost:8000/login"
         >
           log into shopify
-        </a>
+        </StyledLoginButton>
           ) : (
             <Router>
               <ScrollToTop />
