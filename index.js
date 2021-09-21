@@ -34,7 +34,12 @@ const stateKey = 'spotify_auth_state';
 //1. Have your application request authorization
 app.get('/login', (req, res) => { 
   const state = generateRandomString(16);
-  const scope = "user-read-private user-read-email user-read-recently-played";
+  const scope = [
+    "user-read-private", 
+    "user-read-email",
+    "user-read-recently-played",
+    "user-top-read"
+  ].join(" ");
   //set a cookie
   res.cookie(stateKey, state);
 
