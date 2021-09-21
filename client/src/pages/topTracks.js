@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { catchErrors } from '../utils';
 import { getTopTracks} from '../spotify';
-import { SectionWrapper, TimeRangeButtons, TrackList } from '../components';
+import { Loader, SectionWrapper, TimeRangeButtons, TrackList } from '../components';
 
 const TopArtist = () => {
     const [userTopTracks, setUserTopTracks] = useState(null);
@@ -25,9 +25,9 @@ const TopArtist = () => {
           setActiveRange={setActiveRange}
         />
 
-        {userTopTracks && userTopTracks.items && (
+        {userTopTracks && userTopTracks.items ? (
             <TrackList tracks={userTopTracks.items} />
-        )}
+        ) : <Loader />}
       </SectionWrapper>
     </main>
   );
