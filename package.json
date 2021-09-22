@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "A full stack web app to visualize personalized Spotify data with the help of Node.js, React, Styled Components, and the Spotify Web API.",
   "main": "index.js",
-  "engines": {
-    "node": "15.2.0",
-    "npm": "7.22.0"
-  },
   "cacheDirectories": [
     "node_modules",
     "client/node_modules"
