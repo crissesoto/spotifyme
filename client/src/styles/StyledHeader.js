@@ -5,7 +5,8 @@ const StyledHeader = styled.header`
   align-items: flex-end;
   position: relative;
   background: linear-gradient(transparent, rgba(0,0,0,0.5));
-  background-color: var(--grey);  height: 30vh;
+  background-color: var(--grey);  
+  height: 30vh;
   max-height: 500px;
   min-height: 250px;
 
