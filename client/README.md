@@ -2,6 +2,22 @@
 
 A full stack web app to visualize personalized Spotify data with the help of Node.js, React, Styled Components, and the Spotify Web API.
 
+![demo](https://raw.githubusercontent.com/crissesoto/spotifyme/master/client/public/og.png)
+
+## Built with:
+
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Express](https://expressjs.com/)
+- [Reach Router](https://reach.tech/router)
+- [Styled Components](https://www.styled-components.com/)
+
+## Test app
+Login with test account as de application still in development mode until verification.
+
+email: test-crisse-soto-apps@hotmail.com
+password: testaccount
+
 ## Local Installation & Set Up
 
 1. Register a Spotify App in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/) and add `http://localhost:8000/callback` as a Redirect URI in the app settings
