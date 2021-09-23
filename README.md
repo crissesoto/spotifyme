@@ -15,6 +15,9 @@ A full stack web app to visualize personalized Spotify data with the help of Nod
 ## Test app
 Login with test account as de application still in development mode until verification.
 
+Live app: <https://spotifyme-profile.herokuapp.com/>
+
+Login info: <br>
 email: test-crisse-soto-apps@hotmail.com
 password: testaccount
 
